@@ -4,14 +4,17 @@
 <PLUGIN 
   name="tailscale"
   author="Derek Kaser"
-  version="2023.12.02"
-  pluginURL="https://raw.githubusercontent.com/dkaser/unraid-tailscale/trunk/plugin/tailscale-trunk.plg"
+  version="2023.12.14"
+  pluginURL="https://raw.githubusercontent.com/fmathieu360/unraid-tailscale/trunk/plugin/tailscale.plg"
   launch="Settings/Tailscale"
   support="https://forums.unraid.net/topic/136889-plugin-tailscale/"
 >
 
 <CHANGES>
 <![CDATA[
+###2023.12.14###
+- Update Tailscale to 1.56.0
+
 ###2023.12.02###
 - Update Tailscale to 1.54.1
 - Protect local IPs from advertised subnets
@@ -30,9 +33,8 @@ For older releases, see https://github.com/dkaser/unraid-tailscale/releases
 ]]>
 </CHANGES>
 
-<FILE Name="/boot/config/plugins/tailscale/tailscale_1.54.1_amd64.tgz">
-# <URL>https://pkgs.tailscale.com/stable/tailscale_1.54.1_amd64.tgz</URL>
-<URL>https://pkgs.tailscale.com/stable/tailscale_1.56.0_amd64.tgz</URL> 
+<FILE Name="/boot/config/plugins/tailscale/tailscale_1.56.0_amd64.tgz">
+<URL>https://pkgs.tailscale.com/stable/tailscale_1.56.0_amd64.tgz</URL>
 <MD5>7C25F9E97A0602A8F2FEC7CD540F03FB</MD5>
 </FILE>
 
@@ -60,7 +62,7 @@ upgradepkg --install-new /boot/config/plugins/tailscale/unraid-plugin-diagnostic
 upgradepkg --install-new --reinstall /boot/config/plugins/tailscale/unraid-tailscale-utils-1.5.0-noarch-1.txz
 
 mkdir -p /usr/local/emhttp/plugins/tailscale/bin
-tar xzf /boot/config/plugins/tailscale/tailscale_1.54.1_amd64.tgz --strip-components 1 -C /usr/local/emhttp/plugins/tailscale/bin
+tar xzf /boot/config/plugins/tailscale/tailscale_1.56.0_amd64.tgz --strip-components 1 -C /usr/local/emhttp/plugins/tailscale/bin
 
 ln -s /usr/local/emhttp/plugins/tailscale/bin/tailscale /usr/local/sbin/tailscale
 ln -s /usr/local/emhttp/plugins/tailscale/bin/tailscaled /usr/local/sbin/tailscaled
@@ -75,7 +77,7 @@ echo "VERSION=2023.12.02" >> /var/local/emhttp/plugins/tailscale/tailscale.ini
 rm -f /boot/config/plugins/tailscale/tailscale-utils-*.txz
 rm -f $(ls /boot/config/plugins/tailscale/unraid-tailscale-utils-*.txz 2>/dev/null | grep -v '1.5.0')
 rm -f $(ls /boot/config/plugins/tailscale/unraid-plugin-diagnostics-*.txz 2>/dev/null | grep -v '1.3.0')
-rm -f $(ls /boot/config/plugins/tailscale/*.tgz 2>/dev/null | grep -v 'tailscale_1.54.1_amd64')
+rm -f $(ls /boot/config/plugins/tailscale/*.tgz 2>/dev/null | grep -v 'tailscale_1.56.0_amd64')
 
 echo ""
 echo "----------------------------------------------------"
