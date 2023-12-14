@@ -31,8 +31,9 @@ For older releases, see https://github.com/dkaser/unraid-tailscale/releases
 </CHANGES>
 
 <FILE Name="/boot/config/plugins/tailscale/tailscale_1.54.1_amd64.tgz">
-<URL>https://pkgs.tailscale.com/stable/tailscale_1.54.1_amd64.tgz</URL>
-<MD5>5200c6f52833cfcc0fca039821091ad9</MD5>
+# <URL>https://pkgs.tailscale.com/stable/tailscale_1.54.1_amd64.tgz</URL>
+<URL>https://pkgs.tailscale.com/stable/tailscale_1.56.0_amd64.tgz</URL> 
+<MD5>7C25F9E97A0602A8F2FEC7CD540F03FB</MD5>
 </FILE>
 
 <FILE Name="/boot/config/plugins/tailscale/unraid-tailscale-utils-1.5.0-noarch-1.txz">
